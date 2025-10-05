@@ -1,13 +1,15 @@
+/**PROGRAMACION ORIENTADA A OBJETOS
+ * CONTEXTO PROPUESTO: CREACION DE JUEGOS DE MESA
+ * Se propone crear un programa para el registro de diseñadores de juegos de mesa, crear juegos de mesa con mecanicas
+ * y con su respectivos componentes.*/
 
 package proyecto_JuegoMesa.app;
-
 import proyecto_JuegoMesa.modelo.*;
 import proyecto_JuegoMesa.patrones.*;
 import proyecto_JuegoMesa.interfaz.*;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
 
 /*** CLASE PRINCIPAL DEL SISTEMA. gestión de diseñadores y juegos de mesa.
  * Funcionalidades:
@@ -146,13 +148,13 @@ public class Main_EA3 { //Se define la clase pública Main. Punto de entrada del
                         break;
                     }
 
-// Mostrar juegos
+                    // Mostrar juegos
                     System.out.println("\n🎮 Juegos:");
                     for (int i = 0; i < juegos.size(); i++) {
                         System.out.println((i + 1) + ". " + juegos.get(i).getNombre_EA3());
                     }
 
-// Seleccionar juego
+                    // Seleccionar juego
                     System.out.print("\nSeleccione el número del juego a editar: ");
                     int sel = leerEntero(scanner);
                     if (sel < 1 || sel > juegos.size()) {
@@ -162,14 +164,14 @@ public class Main_EA3 { //Se define la clase pública Main. Punto de entrada del
 
                     Juego_EA3 juegoSeleccionado = juegos.get(sel - 1);
 
-// Editar nombre del juego
+                    // Editar nombre del juego
                     System.out.println("✏️ Nombre actual: " + juegoSeleccionado.getNombre_EA3());
                     System.out.print("Nuevo nombre del juego: ");
                     String nuevoNombre = scanner.nextLine();
                     juegoSeleccionado.setNombre_EA3(nuevoNombre);
                     System.out.println("✅ Nombre actualizado: " + juegoSeleccionado.getNombre_EA3());
 
-// Mostrar componentes
+                    // Mostrar componentes
                     List<Componente_EA3> componentes = juegoSeleccionado.getComponentes_EA3();
                     if (componentes.isEmpty()) {
                         System.out.println("⚠️ Este juego no tiene componentes.");
@@ -182,7 +184,7 @@ public class Main_EA3 { //Se define la clase pública Main. Punto de entrada del
                         componentes.get(i).mostrar_EA3();
                     }
 
-// Editar componente
+                    // Editar componente
                     System.out.print("\n¿Desea editar un componente? (s/n): ");
                     if (scanner.nextLine().equalsIgnoreCase("s")) {
                         System.out.print("Seleccione el número del componente a editar: ");
