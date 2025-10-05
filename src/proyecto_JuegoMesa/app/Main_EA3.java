@@ -288,12 +288,11 @@ public class Main_EA3 { //Se define la clase pública Main. Punto de entrada del
         scanner.close();
     }
 
-    /**
+    /**VALIDACION ENTRADAS Y GESTION DE ERRORES
      * Lee un entero desde consola de forma segura.
-     * try-catch-finally para validar la entrada sin detener el programa.
-     */
+     * try-catch-finally para validar la entrada sin detener el programa. */
     static int leerEntero(Scanner scanner) {
-        try { //try-catch-finally para validar la entrada sin detener el programa.
+        try {  // try-catch-finally para validar la entrada sin detener el programa.
             return Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e) {
             System.out.println("❌ Error: Debe ingresar un número válido.");
