@@ -11,4 +11,4 @@ public class MecanicaTurnos_EA3 implements MecanicaJuego_EA3 { //Estrategias con
 
 /**Nota adicional: El patrón de diseño Strategy se aplica en mecánicas del juego  MecanicaTurnos_EA3
  * y MecanicaPuntos_EA3 para cambiar el comportamiento del flujo sin alterar la clase principal.
- * las mecánicas del juego,
+ * las mecánicas del juego,*/

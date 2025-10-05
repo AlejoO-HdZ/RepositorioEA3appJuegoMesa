@@ -1,3 +1,4 @@
+
 package proyecto_JuegoMesa.app;
 
 import proyecto_JuegoMesa.modelo.*;
@@ -301,3 +302,34 @@ public class Main_EA3 { //Se define la clase pública Main. Punto de entrada del
             System.out.println(" ");
         }
     }
+    /**
+     * Muestra la lista de diseñadores y permite seleccionar uno por número.
+     * Usa Streams y operaciones intermedias como filter, map, forEach y collect.
+     */
+    static Diseñador_EA3 seleccionarDiseñador(Scanner scanner, List<Diseñador_EA3> diseñadores) {
+        if (diseñadores == null || diseñadores.isEmpty()) {
+            System.out.println("⚠️ No hay diseñadores.");
+            return null;
+        }
+
+        System.out.println("Seleccione diseñador:");
+
+        // Usamos Stream para mapear con índice y mostrar nombres
+        IntStream.range(0, diseñadores.size())
+                .mapToObj(i -> (i + 1) + ". " + diseñadores.get(i).getNombre_EA3())
+                .forEach(System.out::println);
+
+        int sel = leerEntero(scanner);
+
+        // Usamos Stream para filtrar y obtener el diseñador seleccionado
+        return IntStream.range(0, diseñadores.size())
+                .filter(i -> i == sel - 1) // Streams filter anidados con lambdas
+                .mapToObj(diseñadores::get) // Streams map con metodo de referencia
+                .findFirst() // Streams  buscar primero
+                .orElseGet(() -> {
+                    System.out.println("❌ Selección inválida.");
+                    return null;
+                });
+    }
+
+}
